@@ -122,9 +122,9 @@ function Cart() {
               <span>{getTotalPrice()} ₴</span>
             </div>
 
-            <button className="btn btn-primary btn-checkout">
+            <Link to="/checkout" className="btn btn-primary btn-checkout">
               Оформити замовлення
-            </button>
+            </Link>
 
             <Link to="/products" className="continue-shopping">
               ← Продовжити покупки

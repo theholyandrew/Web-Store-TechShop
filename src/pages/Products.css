@@ -61,3 +61,62 @@
     font-size: 14px;
   }
 }
+
+/* Анімація картки при завантаженні */
+.product-card {
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Плавний hover ефект */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Анімація зображення при hover */
+.product-image img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+/* Анімація кнопки "В кошик" */
+.product-actions .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-actions .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.product-actions .btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Анімація ціни */
+.product-price {
+  animation: pulse 2s infinite;
+}
+
+.product-card:hover .product-price {
+  animation: none;
+  color: #1e7e34;
+}

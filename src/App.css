@@ -74,3 +74,71 @@ h1, h2, h3 {
     padding: 10px;
   }
 }
+
+
+
+
+
+/* Покращені анімації для кнопок */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-primary {
+  box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(102,126,234,0.5);
+  transform: translateY(-3px);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Пульсація для важливих кнопок */
+.btn-primary.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Анімація loading для кнопок */
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
