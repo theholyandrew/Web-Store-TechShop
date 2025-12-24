@@ -224,14 +224,16 @@
   font-size: 24px;
   font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 24px;
+  margin-bottom: 24px;  /* ← ВАЖЛИВО: відступ перед кнопкою */
 }
 
+/* ВИПРАВЛЕНІ СТИЛІ КНОПОК */
 .btn-checkout {
   width: 100%;
   padding: 16px;
   font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 16px;  /* ← Відступ між кнопками */
+  display: block;  /* ← Кнопка займає всю ширину */
 }
 
 .continue-shopping {
@@ -241,6 +243,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
+  padding: 12px;  /* ← Додав padding для кращого клікабельного простору */
 }
 
 .continue-shopping:hover {
